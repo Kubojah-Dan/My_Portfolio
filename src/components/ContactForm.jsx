@@ -12,7 +12,7 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    emailjs.sendForm('service_s5a9t15', 'template_52okhzp', form.current, '2dLO-qxnhL4ncAADn')
+    emailjs.sendForm('service_r8x5w9w', 'template_7c9exxm', form.current, '2dLO-qxnhL4ncAADn')
       .then(() => {
         setStatus('UPLINK SUCCESSFUL');
         setIsSubmitting(false);

@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Lenis from '@studio-freight/lenis';
-import Navbar from './components/Navbar';
 import Experience from './components3d/Experience';
 import Overlay from './components/Overlay';
 
 export default function App() {
+  
+  // Initialize Smooth Scroll
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -17,21 +22,15 @@ export default function App() {
 
   return (
     <div className="relative w-full">
-      <Navbar />
-      
-      {/* 3D Scene - This stays fixed in the background */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10 bg-void-black">
+      {/* 3D Background Layer */}
+      <div className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-void-black to-data-blue -z-10">
         <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
           <Experience />
         </Canvas>
       </div>
 
-      {/* HTML Content - This scrolls over the 3D scene */}
+      {/* HTML Content Layer */}
       <Overlay />
-      
-      <footer className="py-10 text-center text-gray-500 border-t border-white/5 bg-void-black">
-        <p>© 2025 Kuboja Daniel. AI & ML Enthusiast.</p>
-      </footer>
     </div>
   );
 }

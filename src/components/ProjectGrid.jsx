@@ -7,15 +7,29 @@ const projects = [
     title: "Scam Detection App",
     desc: "A real-time platform using ML and NLP to identify harmful content across communication channels.",
     tags: ["Python", "NLP", "Transformers", "Docker"],
-    link: "https://github.com/Kubojah-Dan",
+    link: "https://github.com/Kubojah-Dan/SCAM_DEFENDER_PRO",
     img: "assets/project1.png"
   },
   {
     title: "VitalPlate AI",
     desc: "AI-based meal planning web app using MERN stack providing personalized health goals.",
     tags: ["React", "Node.js", "MongoDB", "AI"],
-    link: "https://github.com/Kubojah-Dan",
+    link: "https://github.com/Kubojah-Dan/VitalPlate_Application",
     img: "assets/project2.png"
+  },
+  {
+  title: "My Personal Portfolio",
+  desc: "A high-performance 3D portfolio featuring animated statistical charts, smooth scrolling, and a futuristic dark-blue aesthetic to showcase my AI/ML journey.",
+  tags: ["React", "Three.js", "GSAP", "Tailwind CSS"],
+  link: "https://github.com/Kubojah-Dan/My_Portfolio",
+  img: "assets/project3.png"
+ },
+  {
+    title: "Clause-Wise Legal Document Analyzer",
+    desc: "A RAG system to extract insights from legal documents using natural language queries. Implemented query parsing, semantic search via vector DB, and structured output generation with a open-source LLM - prioritizing affordability and transparency.",
+    tags: ["Python", "FastAPI", "Chroma", "Llama/OSS-120B LLM", "NLP"],
+    link: "https://github.com/Kubojah-Dan/Legal_Document_Analyzer",
+    img: "assets/project4.png"
   }
 ];
 

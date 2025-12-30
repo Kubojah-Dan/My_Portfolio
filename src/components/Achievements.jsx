@@ -121,13 +121,7 @@ export default function Achievements() {
             ))}
           </div>
 
-          {/* Bottom Branding Decor */}
-          <div className="mt-12 p-6 border border-neon-cyan/10 rounded-2xl bg-gradient-to-r from-matrix-dim to-transparent">
-             <p className="font-mono text-[10px] text-gray-500 tracking-[0.2em] leading-relaxed uppercase">
-               System Certification Status: 100% Verified. <br/>
-               Encryption: AES-256-BIT // Uid: {Math.random().toString(36).substring(7).toUpperCase()}
-             </p>
-          </div>
+         
         </div>
       </div>
     </section>

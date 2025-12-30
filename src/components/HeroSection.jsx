@@ -65,7 +65,7 @@ export default function HeroSection() {
             href="/assets/resume.pdf" 
             className="px-10 py-4 border-2 border-neon-cyan/40 text-neon-cyan text-sm font-black uppercase tracking-widest rounded-sm hover:bg-neon-cyan/10 transition-all flex items-center gap-3"
           >
-            <Download size={18} /> RESUME
+            <Download size={18} /> MY CV
           </motion.a>
         </div>
       </div>

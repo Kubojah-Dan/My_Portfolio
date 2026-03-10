@@ -88,6 +88,13 @@ export default function Achievements() {
 
   const achievements = [
     {
+      title: 'Selfiehack',
+      year: '2024',
+      rank: 'Finalist',
+      description:
+        'Recognized as a finalist in a multi-round hackathon focused on innovation and problem-solving.'
+    },
+    {
       title: 'Freshathon',
       year: '2025',
       rank: 'Third Place',
@@ -95,11 +102,11 @@ export default function Achievements() {
         'Achieved third place with an outstanding project in a competitive hackathon environment.'
     },
     {
-      title: 'Selfiehack',
-      year: '2024',
-      rank: 'Finalist',
+      title: 'Hack-O-Hartz',
+      year: '2026',
+      rank: '4 th Place',
       description:
-        'Recognized as a finalist in a multi-round hackathon focused on innovation and problem-solving.'
+        'Managed to secure the fourth place in a highly competitive hackathon with a Cash Prize.'
     }
   ];
 

@@ -6,8 +6,8 @@ const projects = [
   {
     title: "Scam Detection App",
     desc: "A real-time platform using ML and NLP to identify harmful content across communication channels.",
-    tags: ["Python", "NLP", "Transformers", "Docker"],
-    link: "https://github.com/Kubojah-Dan/SCAM_DEFENDER_PRO",
+    tags: ["Python", "Transformers", "Docker", "FastAPI", "React.js"],
+    link: "https://github.com/Kubojah-Dan/AI_SCAM_DEFENDER_PRO",
     img: "assets/project1.png"
   },
   {
@@ -30,6 +30,20 @@ const projects = [
     tags: ["Python", "FastAPI", "Chroma", "Llama/OSS-120B LLM", "NLP"],
     link: "https://github.com/Kubojah-Dan/Legal_Document_Analyzer",
     img: "assets/project4.png"
+  },
+  {
+    title: "Gamified AI Learning Platform (Rural Students)",
+    desc: "A comprehensive educational platform designed to empower students through procedural quest-based learning and provide teachers with advanced AI-driven analytics.",
+    tags: ["Python", "PouchDB", "React(PWA)", "FastAPI", "ML"],
+    link: "https://github.com/Kubojah-Dan/UTKAL-UDAY",
+    img: "assets/project5.png"
+  },
+  {
+    title: "Cryptocurrency Portfolio Tracker",
+    desc: "A modern, full-stack cryptocurrency dashboard built for tracking crytocurrency for  and managing portfolio. Features real-time price updates, interactive charts, watchlist management, and price alerts.",
+    tags: ["Python", "MongoDB", "React", "Node.js", "ML", "CoinGecko API"],
+    link: "https://github.com/Kubojah-Dan/CoinVista",
+    img: "assets/project6.png"
   }
 ];
 

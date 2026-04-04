@@ -18,12 +18,12 @@ const projects = [
     img: "assets/project2.png"
   },
   {
-  title: "My Personal Portfolio",
-  desc: "A high-performance 3D portfolio featuring animated statistical charts, smooth scrolling, and a futuristic dark-blue aesthetic to showcase my AI/ML journey.",
-  tags: ["React", "Three.js", "GSAP", "Tailwind CSS"],
-  link: "https://github.com/Kubojah-Dan/My_Portfolio",
-  img: "assets/project3.png"
- },
+    title: "My Personal Portfolio",
+    desc: "A high-performance 3D portfolio featuring animated statistical charts, smooth scrolling, and a futuristic dark-blue aesthetic to showcase my AI/ML journey.",
+    tags: ["React", "Three.js", "GSAP", "Tailwind CSS"],
+    link: "https://github.com/Kubojah-Dan/My_Portfolio",
+    img: "assets/project3.png"
+  },
   {
     title: "Clause-Wise Legal Document Analyzer",
     desc: "A RAG system to extract insights from legal documents using natural language queries. Implemented query parsing, semantic search via vector DB, and structured output generation with a open-source LLM - prioritizing affordability and transparency.",
@@ -58,15 +58,15 @@ export default function ProjectGrid() {
         <div className="flex items-center gap-3">
           <div className="h-[1px] w-12 bg-neon-cyan" />
           <p className="font-mono text-[10px] text-gray-500 tracking-[0.4em] uppercase">
-            // Neural_Models_Active: {projects.length}
+            Neural_Models_Active: {projects.length}
           </p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((p, i) => (
-          <motion.div 
-            key={i} 
+          <motion.div
+            key={i}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -77,23 +77,23 @@ export default function ProjectGrid() {
               {/* Corner Brackets */}
               <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-neon-cyan z-20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
               <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-neon-cyan z-20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
-              
-              <img 
-                src={p.img} 
-                alt={p.title} 
-                className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 opacity-40 group-hover:opacity-80" 
+
+              <img
+                src={p.img}
+                alt={p.title}
+                className="w-full h-full object-cover transition-all duration-700 opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-90 group-hover:brightness-110"
               />
-              
+
               {/* Futuristic Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-data-blue via-transparent to-transparent" />
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
 
               <div className="absolute top-4 right-4 flex gap-3 z-20">
                 <a href={p.link} className="p-3 bg-void-black/80 backdrop-blur-md border border-white/10 rounded-full text-white hover:text-neon-cyan hover:border-neon-cyan transition-all">
-                  <Github size={18}/>
+                  <Github size={18} />
                 </a>
                 <a href="#" className="p-3 bg-void-black/80 backdrop-blur-md border border-white/10 rounded-full text-white hover:text-neon-cyan hover:border-neon-cyan transition-all">
-                  <ExternalLink size={18}/>
+                  <ExternalLink size={18} />
                 </a>
               </div>
 
@@ -115,7 +115,7 @@ export default function ProjectGrid() {
                 <Terminal size={14} className="text-neon-cyan" />
                 <h3 className="text-2xl font-black text-white tracking-tight uppercase italic">{p.title}</h3>
               </div>
-              
+
               <p className="text-gray-400 text-sm mb-8 leading-relaxed font-medium">
                 {p.desc}
               </p>
@@ -132,7 +132,7 @@ export default function ProjectGrid() {
           </motion.div>
         ))}
       </div>
-      
+
       {/* Background Decor Element */}
       <div className="mt-16 flex justify-center opacity-20">
         <div className="h-[1px] w-full max-w-xs bg-gradient-to-r from-transparent via-neon-cyan to-transparent" />

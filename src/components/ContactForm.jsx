@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Phone, Mail, MapPin, Github, Linkedin, Cpu } from 'lucide-react';
+import { Send, Phone, Mail, MapPin, Github, Linkedin, Cpu, Terminal } from 'lucide-react';
 
 export default function ContactForm() {
   const form = useRef();
@@ -32,13 +32,23 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      {/* Decorative Title */}
+      <div className="mb-16 relative">
+        <h2 className="text-4xl font-black mb-2 flex items-center gap-4 text-white uppercase italic tracking-tighter">
+          <Terminal className="text-neon-cyan" /> Secure <span className="text-neon-cyan">Communication</span>
+        </h2>
+        <div className="flex items-center gap-3">
+          <div className="h-[1px] w-12 bg-neon-cyan" />
+          <p className="font-mono text-[10px] text-gray-500 tracking-[0.4em] uppercase">
+            Establish_Connection
+          </p>
+        </div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 bg-black/40 backdrop-blur-xl p-8 lg:p-12 rounded-[2rem] border border-neon-blue/20 shadow-[0_0_50px_-12px_rgba(74,163,240,0.3)]"
+        className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 bg-data-blue/40 backdrop-blur-xl p-8 lg:p-12 rounded-[2rem] border border-white/5 shadow-2xl shadow-void-black"
       >
         {/* Left Side */}
         <div className="space-y-12">
@@ -46,32 +56,32 @@ export default function ContactForm() {
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: '100px' }}
-              className="h-1 bg-neon-blue mb-6 shadow-[0_0_15px_#4AA3F0]"
+              className="h-1 bg-neon-cyan mb-6 shadow-[0_0_15px_#00F0FF]"
             />
-            <h2 className="text-5xl font-black tracking-tighter mb-4 text-white uppercase italic">
-              Let's <span className="text-neon-blue">Connect</span>
-            </h2>
+            <h3 className="text-3xl font-black tracking-tighter mb-4 text-white uppercase italic">
+              Initiate <span className="text-neon-cyan">Contact</span>
+            </h3>
             <p className="text-gray-400 font-mono text-sm tracking-widest uppercase">
-              // Collaboration_Data_Science
+              Awaiting_Transmission
             </p>
           </div>
 
           <div className="space-y-6">
             {[
               { icon: <Phone size={20} />, label: "COMM-LINK", value: "+91 8452932842" },
-              { icon: <Mail size={20} />, label: "SECURE-MAIL", value: "kubodan014@gmail.com" },
+              { icon: <Mail size={20} />, label: "SECURE-MAIL", value: "kubojadan014@gmail.com" },
               { icon: <MapPin size={20} />, label: "COORDINATES", value: "Coimbatore, India" }
             ].map((item, i) => (
               <motion.div
                 whileHover={{ x: 10 }}
                 key={i}
-                className="group flex items-center gap-6 p-4 rounded-xl border border-white/5 bg-white/5 hover:bg-neon-blue/5 hover:border-neon-blue/30 transition-all cursor-crosshair"
+                className="group flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/5 hover:bg-neon-cyan/5 hover:border-neon-cyan/30 transition-all cursor-crosshair break-all sm:break-normal"
               >
-                <div className="p-3 bg-neon-blue/10 rounded-lg text-neon-blue group-hover:shadow-[0_0_15px_rgba(74,163,240,0.5)]">
+                <div className="p-3 bg-neon-cyan/10 rounded-lg text-neon-cyan group-hover:shadow-[0_0_15px_rgba(0,240,255,0.5)] self-start sm:self-auto">
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-[10px] text-neon-blue font-bold tracking-[0.2em]">
+                  <p className="text-[10px] text-neon-cyan font-bold tracking-[0.2em]">
                     {item.label}
                   </p>
                   <p className="font-mono text-gray-200">
@@ -90,7 +100,7 @@ export default function ContactForm() {
               <a
                 key={i}
                 href={soc.url}
-                className="p-4 bg-white/5 border border-white/10 rounded-full hover:border-neon-blue hover:text-neon-blue transition-all"
+                className="p-4 bg-void-black/80 backdrop-blur-md border border-white/10 rounded-full text-white hover:border-neon-cyan hover:text-neon-cyan transition-all shadow-lg"
               >
                 {soc.icon}
               </a>
@@ -103,18 +113,18 @@ export default function ContactForm() {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="relative space-y-4 bg-space-dark/80 p-8 rounded-3xl h-full"
+            className="relative space-y-6 bg-void-black/80 p-8 rounded-3xl h-full flex flex-col justify-center border border-white/5"
           >
-            <div className="grid grid-cols-1 gap-4">
+            <div className="flex flex-col gap-6">
               <div className="relative group">
                 <input
                   type="text"
                   name="name"
                   placeholder="IDENTIFY NAME"
                   required
-                  className="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-neon-blue font-mono text-sm tracking-widest placeholder:text-gray-600"
+                  className="w-full bg-transparent border-b border-white/20 pb-4 outline-none focus:border-neon-cyan font-mono text-sm tracking-widest placeholder:text-gray-600 text-white"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-neon-blue group-focus-within:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-neon-cyan group-focus-within:w-full transition-all duration-500" />
               </div>
 
               <div className="relative group">
@@ -123,28 +133,28 @@ export default function ContactForm() {
                   name="email"
                   placeholder="EMAIL ADDRESS"
                   required
-                  className="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-neon-blue font-mono text-sm tracking-widest placeholder:text-gray-600"
+                  className="w-full bg-transparent border-b border-white/20 pb-4 outline-none focus:border-neon-cyan font-mono text-sm tracking-widest placeholder:text-gray-600 text-white"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-neon-blue group-focus-within:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-neon-cyan group-focus-within:w-full transition-all duration-500" />
               </div>
             </div>
 
-            <div className="relative group">
+            <div className="relative group pt-2">
               <textarea
                 name="title"
                 rows="5"
                 placeholder="ENCODE MESSAGE..."
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-neon-blue/50 font-mono text-sm placeholder:text-gray-600 resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-neon-cyan/50 font-mono text-sm placeholder:text-gray-600 resize-none text-white"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative w-full overflow-hidden py-4 bg-transparent border border-neon-blue text-neon-blue font-black tracking-[0.3em] uppercase rounded-xl transition-all hover:text-black"
+              className="group relative w-full overflow-hidden py-4 bg-transparent border border-neon-cyan text-neon-cyan font-black tracking-[0.3em] uppercase rounded-xl transition-all hover:text-black mt-4"
             >
-              <div className="absolute inset-0 bg-neon-blue translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-neon-cyan translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
               <span className="relative flex items-center justify-center gap-3">
                 {isSubmitting ? <Cpu className="animate-spin" /> : <Send size={18} />}
                 {isSubmitting ? "PROCESSING..." : "Transmit Data"}
@@ -157,7 +167,7 @@ export default function ContactForm() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
-                  className="text-center text-xs font-mono text-neon-blue mt-4"
+                  className="text-center text-xs font-mono text-neon-cyan mt-4 font-bold"
                 >
                   {`> ${status}`}
                 </motion.p>

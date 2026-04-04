@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'void-black': '#000000',
-        'data-blue': '#050B23', 
+        'void-black': '#0A0F1C',
+        'data-blue': '#0F172A', 
         'neon-cyan': '#00F0FF',
         'matrix-dim': 'rgba(0, 240, 255, 0.1)'
       },

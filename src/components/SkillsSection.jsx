@@ -14,7 +14,7 @@ const SkillsSection = () => {
     <section id="skills" className="py-24 px-6 max-w-7xl mx-auto relative">
       {/* Section Header */}
       <div className="mb-16">
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: '80px' }}
           className="h-1 bg-neon-cyan mb-4 shadow-[0_0_15px_#00F0FF]"
@@ -23,18 +23,18 @@ const SkillsSection = () => {
           Technical <span className="text-neon-cyan">Arsenal</span>
         </h2>
         <p className="font-mono text-[10px] text-gray-500 tracking-[0.4em] mt-2 uppercase">
-          // Modules_Detected: {skills.length} | System_Status: Optimal
+          Modules_Detected: {skills.length} | System_Status: Optimal
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skills.map((skill, idx) => (
-          <motion.div 
-            key={idx} 
+          <motion.div
+            key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            whileHover={{ scale: 1.02 }} 
+            whileHover={{ scale: 1.02 }}
             className="group relative p-8 bg-data-blue/40 backdrop-blur-xl border border-white/10 rounded-br-3xl rounded-tl-3xl overflow-hidden"
           >
             {/* Corner Decorative Accent */}
@@ -48,7 +48,7 @@ const SkillsSection = () => {
               <div className="mb-6 inline-flex p-3 bg-matrix-dim rounded-lg text-neon-cyan shadow-[0_0_10px_rgba(0,240,255,0.2)]">
                 {skill.icon}
               </div>
-              
+
               <h3 className="text-lg font-mono font-bold mb-4 text-white tracking-widest uppercase flex items-center justify-between">
                 {skill.category}
                 <span className="text-[10px] text-neon-cyan opacity-50 group-hover:opacity-100">0{idx + 1}</span>

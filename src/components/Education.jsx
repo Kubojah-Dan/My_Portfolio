@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { GraduationCap, MapPin, Globe, Box } from 'lucide-react';
 
 const EduStep = ({ school, degree, detail, year, location, index }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, x: -30 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -13,14 +13,14 @@ const EduStep = ({ school, degree, detail, year, location, index }) => (
     {/* Animated Node */}
     <div className="absolute -left-[13px] top-0 flex items-center justify-center">
       <div className="w-6 h-6 bg-void-black border-2 border-neon-cyan rounded-sm rotate-45 flex items-center justify-center shadow-[0_0_15px_#00F0FF]">
-         <div className="w-2 h-2 bg-neon-cyan animate-pulse" />
+        <div className="w-2 h-2 bg-neon-cyan animate-pulse" />
       </div>
     </div>
 
     <div className="group relative bg-data-blue/20 backdrop-blur-sm p-8 rounded-tr-3xl rounded-bl-3xl border border-white/5 hover:border-neon-cyan/40 transition-all duration-500 overflow-hidden">
       {/* Decorative Scan Line */}
       <div className="absolute top-0 left-0 w-[2px] h-0 bg-neon-cyan group-hover:h-full transition-all duration-700" />
-      
+
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
         <div>
           <span className="font-mono text-xs text-neon-cyan tracking-[0.5em] uppercase opacity-70">
@@ -43,11 +43,11 @@ const EduStep = ({ school, degree, detail, year, location, index }) => (
 
       <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-gray-500">
         <span className="flex items-center gap-2 group-hover:text-neon-cyan transition-colors">
-          <MapPin size={14} className="text-neon-cyan" /> 
+          <MapPin size={14} className="text-neon-cyan" />
           {location.toUpperCase()}
         </span>
         <span className="flex items-center gap-2 opacity-50">
-          <Globe size={14} /> 
+          <Globe size={14} />
           ESTABLISHING_LOCATION_DATA... 100%
         </span>
       </div>
@@ -100,7 +100,7 @@ export default function Education() {
         <div className="flex items-center gap-4">
           <div className="h-[2px] w-24 bg-neon-cyan shadow-[0_0_10px_#00F0FF]" />
           <p className="font-mono text-[10px] text-gray-500 tracking-[0.3em] uppercase">
-            // Cross-Continental_Academic_Records
+            Cross-Continental_Academic_Journey
           </p>
         </div>
       </div>

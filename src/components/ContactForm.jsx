@@ -48,7 +48,7 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 bg-data-blue/40 backdrop-blur-xl p-6 md:p-12 rounded-[2rem] border border-white/5 shadow-2xl shadow-void-black"
+        className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 bg-data-blue/40 backdrop-blur-xl p-5 sm:p-8 md:p-12 rounded-[2rem] border border-white/5 shadow-2xl shadow-void-black"
       >
         {/* Left Side */}
         <div className="space-y-10 md:space-y-12">
@@ -58,10 +58,10 @@ export default function ContactForm() {
               whileInView={{ width: '100px' }}
               className="h-1 bg-neon-cyan mb-6 shadow-[0_0_15px_#00F0FF]"
             />
-            <h3 className="text-2xl md:text-3xl font-black tracking-tighter mb-4 text-white uppercase italic">
+            <h3 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-white uppercase italic">
               Initiate <span className="text-neon-cyan">Contact</span>
             </h3>
-            <p className="text-gray-400 font-mono text-[10px] md:text-sm tracking-widest uppercase">
+            <p className="text-gray-400 font-mono text-xs md:text-sm tracking-widest uppercase">
               Awaiting_Transmission
             </p>
           </div>
@@ -115,46 +115,53 @@ export default function ContactForm() {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="relative space-y-6 bg-void-black/80 p-6 md:p-8 rounded-3xl h-full flex flex-col justify-center border border-white/5"
+            className="relative space-y-8 bg-void-black/80 p-5 sm:p-8 rounded-3xl h-full flex flex-col justify-center border border-white/5"
           >
-            <div className="flex flex-col gap-6">
+            <div className="space-y-6">
               <div className="relative group">
+                <label className="block font-mono text-[10px] text-neon-cyan/60 uppercase tracking-[0.3em] mb-2 ml-1">
+                  [ Identity_Name ]
+                </label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="IDENTIFY NAME"
+                  placeholder="ENTER NAME"
                   required
-                  className="w-full bg-transparent border-b border-white/20 pb-4 outline-none focus:border-neon-cyan font-mono text-sm tracking-widest placeholder:text-gray-600 text-white"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-4 outline-none focus:border-neon-cyan/50 font-mono text-sm tracking-widest placeholder:text-gray-700 text-white transition-all"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-neon-cyan group-focus-within:w-full transition-all duration-500" />
               </div>
 
               <div className="relative group">
+                <label className="block font-mono text-[10px] text-neon-cyan/60 uppercase tracking-[0.3em] mb-2 ml-1">
+                  [ Secure_Email ]
+                </label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="EMAIL ADDRESS"
+                  placeholder="ENTER EMAIL"
                   required
-                  className="w-full bg-transparent border-b border-white/20 pb-4 outline-none focus:border-neon-cyan font-mono text-sm tracking-widest placeholder:text-gray-600 text-white"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-4 outline-none focus:border-neon-cyan/50 font-mono text-sm tracking-widest placeholder:text-gray-700 text-white transition-all"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-neon-cyan group-focus-within:w-full transition-all duration-500" />
               </div>
             </div>
 
-            <div className="relative group pt-2">
+            <div className="relative group">
+              <label className="block font-mono text-[10px] text-neon-cyan/60 uppercase tracking-[0.3em] mb-2 ml-1">
+                [ Transmission_Data ]
+              </label>
               <textarea
                 name="title"
                 rows="4"
                 placeholder="ENCODE MESSAGE..."
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-neon-cyan/50 font-mono text-sm placeholder:text-gray-600 resize-none text-white"
+                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-neon-cyan/50 font-mono text-sm placeholder:text-gray-700 resize-none text-white transition-all"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative w-full overflow-hidden py-4 bg-transparent border border-neon-cyan text-neon-cyan font-black tracking-[0.3em] uppercase rounded-xl transition-all hover:text-black mt-4"
+              className="group relative w-full overflow-hidden py-4 bg-transparent border border-neon-cyan text-neon-cyan font-black tracking-[0.3em] uppercase rounded-xl transition-all hover:text-black mt-2"
             >
               <div className="absolute inset-0 bg-neon-cyan translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
               <span className="relative flex items-center justify-center gap-3">
@@ -169,7 +176,7 @@ export default function ContactForm() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
-                  className="text-center text-xs font-mono text-neon-cyan mt-4 font-bold"
+                  className="text-center text-xs font-mono text-neon-cyan mt-2 font-bold"
                 >
                   {`> ${status}`}
                 </motion.p>

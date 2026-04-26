@@ -6,13 +6,32 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = ['Home', 'Skills', 'Achievements', 'Projects', 'Education', 'Contact'];
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id.toLowerCase());
+    if (element) {
+      const offset = 80; // Height of the fixed navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed w-full z-[100] bg-void-black/60 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-black text-white font-mono flex items-center gap-2"
+          className="text-2xl font-black text-white font-mono flex items-center gap-2 cursor-pointer"
+          onClick={(e) => scrollToSection(e, 'home')}
         >
           <div className="w-8 h-8 bg-neon-cyan/10 border border-neon-cyan/40 rounded flex items-center justify-center">
             <span className="text-neon-cyan text-lg">K</span>
@@ -26,6 +45,7 @@ export default function Navbar() {
             <motion.a 
               key={item} 
               href={`#${item.toLowerCase()}`}
+              onClick={(e) => scrollToSection(e, item)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
@@ -60,7 +80,7 @@ export default function Navbar() {
                 <motion.a 
                   key={item} 
                   href={`#${item.toLowerCase()}`} 
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => scrollToSection(e, item)}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
@@ -76,4 +96,5 @@ export default function Navbar() {
       </AnimatePresence>
     </nav>
   );
-}
+}
+

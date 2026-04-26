@@ -133,19 +133,19 @@ export default function Achievements() {
       name: 'Google Analytics',
       issuer: 'GOOGLE',
       date: '2026',
-      img: 'https://drive.google.com/file/d/1zI1PN6kq-qiCQPWUD6cSDniP2YcIDfwr'
+      img: 'https://lh3.googleusercontent.com/d/1zI1PN6kq-qiCQPWUD6cSDniP2YcIDfwr'
     },
     {
       name: 'Google Analytics - Badge',
       issuer: 'GOOGLE',
       date: '2026',
-      img: 'https://drive.google.com/file/d/12zrvZVyGw4GQZaAO7iVk1y1adYN-yOj7'
+      img: 'https://lh3.googleusercontent.com/d/12zrvZVyGw4GQZaAO7iVk1y1adYN-yOj7'
     },
     {
       name: 'Design Thinking - A Primer',
       issuer: 'NPTEL',
       date: '2026',
-      img: 'https://drive.google.com/file/d/1ymN_YGpwMCPbG9_VKja9HgtE_zFv4Rov'
+      img: 'https://lh3.googleusercontent.com/d/1ymN_YGpwMCPbG9_VKja9HgtE_zFv4Rov'
     },
     {
       name: 'DSA in C & C++',

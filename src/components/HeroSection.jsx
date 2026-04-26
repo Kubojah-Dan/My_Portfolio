@@ -32,7 +32,7 @@ export default function HeroSection() {
             <span className="text-neon-cyan font-bold not-italic tracking-[0.2em] text-[10px] md:text-xs block mb-2 uppercase">
               ABOUT ME:
             </span>
-            I am an aspiring <span className="text-white font-bold">Data Scientist</span> passionate about using data to tackle complex problems. I have a strong analytical mindset and skills in <span className="text-neon-cyan">AI</span> and <span className="text-neon-cyan">Machine Learning</span>. I am always dedicated to learning and growing. My aim is to bring my expertise to dynamic teams and take on challenging projects with determination.
+            I am an aspiring <span className="text-white font-bold">Data Scientist</span> passionate about using data to tackle complex problems. I have a strong analytical mindset and skills in <span className="text-neon-cyan">AI</span> and <span className="text-neon-cyan">Machine Learning</span>. I am always dedicated to learning and growing. I aim to bring my expertise to dynamic teams and take on challenging projects with determination.
           </p>
         </motion.div>
 
@@ -58,7 +58,7 @@ export default function HeroSection() {
             href="#projects"
             className="group px-6 md:px-10 py-3 md:py-4 bg-neon-cyan text-void-black text-xs md:text-sm font-black uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all"
           >
-            VIEW WORK <Rocket size={18} />
+            VIEW MY WORK <Rocket size={18} />
           </motion.a>
 
           <motion.a

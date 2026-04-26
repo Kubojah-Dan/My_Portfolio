@@ -56,6 +56,14 @@ export default function HeroSection() {
           <motion.a
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 240, 255, 0.4)" }}
             href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              if (window.lenis) {
+                window.lenis.scrollTo('#projects', { offset: -80 });
+              } else {
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className="group px-6 md:px-10 py-3 md:py-4 bg-neon-cyan text-void-black text-xs md:text-sm font-black uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all"
           >
             VIEW MY WORK <Rocket size={18} />

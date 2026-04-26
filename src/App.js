@@ -7,12 +7,27 @@ import Overlay from './components/Overlay';
 
 export default function App() {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    window.lenis = lenis;
+
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      cancelAnimationFrame(rafId);
+      window.lenis = null;
+    };
   }, []);
 
   return (

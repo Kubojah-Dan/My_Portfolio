@@ -10,16 +10,17 @@ export default function Navbar() {
     e.preventDefault();
     const element = document.getElementById(id.toLowerCase());
     if (element) {
-      const offset = 80; // Height of the fixed navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      const offset = 80;
+      
+      if (window.lenis) {
+        window.lenis.scrollTo(element, { offset: -offset });
+      } else {
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        });
+      }
     }
     setIsOpen(false);
   };

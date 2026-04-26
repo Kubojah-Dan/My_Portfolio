@@ -3,17 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-void-black text-white m-0 p-0 overflow-x-hidden font-mono;
+    @apply bg-void-black text-white m-0 p-0 overflow-x-hidden font-mono selection:bg-neon-cyan/30 selection:text-neon-cyan;
   }
 }
-@theme {
-  --color-neon-blue: #4AA3F0;
-  --color-space-dark: #050B23;
+
+@layer components {
+  .section-container {
+    @apply py-16 px-6 md:py-24 md:px-12 max-w-7xl mx-auto;
+  }
 }
 
 /* Hide scrollbar but keep functionality */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 4px;
 }
+::-webkit-scrollbar-track {
+  @apply bg-void-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-cyan/20 rounded-full hover:bg-neon-cyan/40;
+}
+

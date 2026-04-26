@@ -11,23 +11,23 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 max-w-7xl mx-auto relative">
+    <section id="skills" className="section-container relative">
       {/* Section Header */}
-      <div className="mb-16">
+      <div className="mb-12 md:mb-16">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: '80px' }}
           className="h-1 bg-neon-cyan mb-4 shadow-[0_0_15px_#00F0FF]"
         />
-        <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic flex items-center gap-4">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-white uppercase italic flex items-center gap-4">
           Technical <span className="text-neon-cyan">Arsenal</span>
         </h2>
         <p className="font-mono text-[10px] text-gray-500 tracking-[0.4em] mt-2 uppercase">
-          Modules_Detected: {skills.length} | System_Status: Optimal
+          Modules_Detected: {skills.length} | Status: Optimal
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {skills.map((skill, idx) => (
           <motion.div
             key={idx}

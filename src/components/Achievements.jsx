@@ -22,7 +22,7 @@ const CertificateModal = ({ cert, onClose }) => (
       initial={{ scale: 0.8, y: 20 }}
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0.8, y: 20 }}
-      className="relative max-w-5xl w-full bg-[#0A1438] border border-[#00F0FF]/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,240,255,0.3)]"
+      className="relative max-w-5xl w-full mx-auto bg-space-card border border-neon-cyan/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,240,255,0.3)]"
       onClick={(e) => e.stopPropagation()}
     >
       <button
@@ -55,28 +55,28 @@ const AchievementCard = ({ title, year, description, rank }) => (
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
-    className="relative pl-10 pb-12 border-l-2 border-[#00F0FF]/20 last:pb-0"
+    className="relative pl-8 md:pl-10 pb-12 border-l-2 border-neon-cyan/20 last:pb-0"
   >
-    <div className="absolute left-[-11px] top-0">
-      <div className="w-5 h-5 rounded-full bg-black border-2 border-[#00F0FF] shadow-[0_0_15px_#00F0FF]" />
+    <div className="absolute left-[-11px] top-0 z-10">
+      <div className="w-5 h-5 rounded-full bg-void-black border-2 border-neon-cyan shadow-[0_0_15px_#00F0FF]" />
     </div>
 
-    <div className="bg-[#0A1438]/50 p-6 rounded-2xl border border-white/5 hover:border-[#00F0FF]/50 transition-all">
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">
+    <div className="bg-space-card/40 backdrop-blur-sm p-5 md:p-8 rounded-2xl border border-white/5 hover:border-neon-cyan/50 transition-all">
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-3">
+        <h3 className="text-xl md:text-2xl font-black text-white uppercase italic tracking-tighter">
           {title}
         </h3>
-        <span className="text-[10px] font-mono text-[#00F0FF] border border-[#00F0FF]/30 px-2 py-1 rounded bg-[#00F0FF]/5">
+        <span className="text-[10px] font-mono text-neon-cyan border border-neon-cyan/30 px-2 py-1 rounded bg-neon-cyan/5">
           {year}
         </span>
       </div>
 
-      <p className="text-[#00F0FF] font-mono text-[10px] tracking-widest flex items-center gap-2 mb-3">
+      <p className="text-neon-cyan font-mono text-[10px] tracking-widest flex items-center gap-2 mb-4">
         <Trophy size={14} /> {rank}
       </p>
 
-      <p className="text-gray-400 text-sm font-mono leading-relaxed">
-        <span className="text-[#00F0FF]/50 mr-2">{'>'}</span>
+      <p className="text-gray-400 text-xs md:text-sm font-mono leading-relaxed">
+        <span className="text-neon-cyan/50 mr-2">{'>'}</span>
         {description}
       </p>
     </div>
@@ -130,6 +130,24 @@ export default function Achievements() {
       img: 'https://lh3.googleusercontent.com/d/1ot8WsXdOd9DnzdwvGiNfFO5jK91KQQHg'
     },
     {
+      name: 'Google Analytics',
+      issuer: 'GOOGLE',
+      date: '2026',
+      img: 'https://drive.google.com/file/d/1zI1PN6kq-qiCQPWUD6cSDniP2YcIDfwr'
+    },
+    {
+      name: 'Google Analytics - Badge',
+      issuer: 'GOOGLE',
+      date: '2026',
+      img: 'https://drive.google.com/file/d/12zrvZVyGw4GQZaAO7iVk1y1adYN-yOj7'
+    },
+    {
+      name: 'Design Thinking - A Primer',
+      issuer: 'NPTEL',
+      date: '2026',
+      img: 'https://drive.google.com/file/d/1ymN_YGpwMCPbG9_VKja9HgtE_zFv4Rov'
+    },
+    {
       name: 'DSA in C & C++',
       issuer: 'Udemy',
       date: '2025',
@@ -166,19 +184,19 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="py-24 px-6 max-w-7xl mx-auto overflow-hidden"
+      className="section-container overflow-hidden"
     >
       {/* HACKATHONS */}
-      <div className="mb-24">
-        <div className="mb-12">
-          <h2 className="text-4xl font-black text-white uppercase italic flex items-center gap-4">
-            <Medal className="text-[#00F0FF]" /> Mission{' '}
-            <span className="text-[#00F0FF]">Log</span>
+      <div className="mb-20 md:mb-24">
+        <div className="mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-black text-white uppercase italic flex items-center gap-4">
+            <Medal className="text-neon-cyan" /> Mission{' '}
+            <span className="text-neon-cyan">Log</span>
           </h2>
-          <div className="h-1 w-20 bg-[#00F0FF] mt-2 shadow-[0_0_10px_#00F0FF]" />
+          <div className="h-1 w-20 bg-neon-cyan mt-2 shadow-[0_0_10px_#00F0FF]" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ml-3 md:ml-4">
           {achievements.map((ach, i) => (
             <AchievementCard key={i} {...ach} />
           ))}
@@ -205,7 +223,7 @@ export default function Achievements() {
               <div
                 key={idx}
                 onClick={() => setSelectedCert(cert)}
-                className="flex-shrink-0 w-[350px] h-[220px] mx-4 bg-[#0A1438] rounded-2xl border border-white/10 overflow-hidden cursor-zoom-in relative group/card"
+                className="flex-shrink-0 w-[280px] sm:w-[350px] h-[180px] sm:h-[220px] mx-4 bg-space-card rounded-2xl border border-white/10 overflow-hidden cursor-zoom-in relative group/card"
               >
                 <img
                   src={cert.img}
